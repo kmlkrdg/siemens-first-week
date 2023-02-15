@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <script>
+
+        var numbers = [1, 2, 3, 4, 5];
+
+        var products = [
+
+            { id: 1, name: "kalem 1", price: 100, stock: 20 },
+
+            { id: 2, name: "kalem 2", price: 200, stock: 40 },
+
+            { id: 3, name: "kalem 3", price: 300, stock: 60 }
+
+        ]
+
+
+
+        var product = products.find(product => product.price > 200);
+        //console.log(product);
+        var searchProducts = products.filter(product => product.price > 100);
+        //console.log(searchProducts);
+        var productIndex = products.findIndex(x => x.name == "kalem 3");
+
+
+        //console.log(products.map(x => x.price * 2));
+
+        var stockSum = products.reduce((a, b) => a.stock + b.stock, 0);
+
+        console.log(stockSum)
+        console.log(products.every(x => x.stock  >= 10));
+        console.log(products.some(x => x.stock  > 40));
+
+        console.log(`includes :${products.includes(5)}`);
+
+
+
+
+        var filterProductMethod = (product) => {
+
+            return product.price > 100 && product.stock > 40;
+
+        }
+
+        var filterProductMethod2 = (product) => {
+
+            return product.price > 200 && product.stock > 40;
+
+        }
+
+        var filterProductMethod3 = (product) => {
+
+            return product.price > 10 && product.stock >= 40 && product.stock <= 200;
+
+        }
+
+
+
+
+
+
+        filterProduct(products, filterProductMethod3);
+
+
+
+        function filterProduct(products, filterFuc) {
+
+            products.forEach((product) => {
+
+                if (filterFuc(product)) {
+
+                    console.log(product);
+
+                }
+
+            }
+
+            );
+
+        }
+
+
+
+
+
+
+
+        numbers.push(6); //add last
+
+        console.log(`Push: ${numbers}`);
+
+        numbers.unshift(0); //add first
+
+        console.log(`Unshift: ${numbers}`);
+
+        numbers.pop(); //remove last
+
+        console.log(`Pop: ${numbers}`);
+
+        numbers.shift(); //remove first
+
+        console.log(`Shift: ${numbers}`);
+
+
+
+        console.log(numbers.join("-"));
+
+
+
+        console.log(numbers.slice(1, 3)); //index aralığını alır - son hariç
+
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+
+</body>
+
+
+
+</html>

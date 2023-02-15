@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+
+
+       
+
+        var numbers = [1, 2, 3, 4, 5];
+
+        var products = [
+            { id: 1, name: "kalem 1 ", price: 100, stock: 20 },
+            { id: 2, name: "kalem 2 ", price: 200, stock: 40 },
+            { id: 3, name: "kalem 3 ", price: 300, stock: 60 }
+
+        ]
+
+       // var product = products.find(products => product.price > 200);
+       // console.log(product)
+
+        //var searchProducts = product.filter(product => product.price > 100);
+
+        //var productindex = product.findindex(x => x.name == "kalem 3");
+
+        console.log(product.map(product => product.price*2))
+
+        console.log(products.reduce((a,b) => a.stock + b.stock));
+
+
+
+
+
+
+        var filterProductMethod = (product) =>{
+            return product.price > 100 && product.stock > 40
+        }
+        var filterProductMethod2 = (product) => {
+            return product.price > 50 && product.stock > 40
+        }
+        var filterProductMethod3 = (product) => {
+            return product.price > 10 && product.stock > 40 && product.stock <= 200
+
+        }
+
+        filterProduct(product, filterProductMethod3);
+
+function filterProduct(products,filterFuc){
+
+        products.forEach((product) => {
+
+            if (filterFuc(product)){
+                console.log(product);
+            }
+                
+        }
+        );
+        }
+
+        
+
+
+
+        var product = products.find()
+
+
+
+        numbers.push(6) // add last
+        console.log(`push: ${numbers}`)
+        numbers.unshift(0) // add first
+
+        console.log(`unshift: ${numbers}`)
+        numbers.pop(0) // remove last
+        console.log(`pop: ${numbers}`)
+        numbers.shift(0) // remove first
+        console.log(`shift: ${numbers}`)
+
+
+        console.log(numbers.join("_"))
+
+        console.log(numbers.slice(0, 2))
+
+//console.log (numbers.join(x =>  ))
+
+    </script>
+
+
+</head>
+
+
+</html>
